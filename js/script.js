@@ -37,6 +37,9 @@ const memoItem = (v) => {
   // add seat total number
   const seatCount = getInputById("seatCount");
   seatCount.innerText = turn;
+  if(turn === 1){
+    seatCount.classList = 'bg-primaryColor px-1 text-white rounded-full text-[14px] font-normal'
+  }
 
   // seat left count
   const seatLeft = getInputById("seatLeft");
