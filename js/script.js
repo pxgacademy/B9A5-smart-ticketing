@@ -1,3 +1,4 @@
+const totalBusSeat = 40;
 const ticketPrice = 550;
 let tPrice = 0;
 let turn = 0;
@@ -32,6 +33,14 @@ const memoItem = (v) => {
   // add grand total
   const grandTotal = getInputById("grandTotal");
   grandTotal.innerText = tPrice;
+
+  // add seat total number
+  const seatCount = getInputById("seatCount");
+  seatCount.innerText = turn;
+
+  // seat left count
+  const seatLeft = getInputById("seatLeft");
+  seatLeft.innerText = totalBusSeat - turn;
 };
 
 const couponSubmit = getInputById("couponSubmit");
@@ -63,3 +72,23 @@ const discountAndGrandTotal = () => {
     grandTotal.innerText = tPrice - discount;
   }
 };
+
+// passenger details
+const pPhoneNumber = getInputById("pPhoneNumber");
+const submitNext = getInputById("submitNext");
+pPhoneNumber.addEventListener("keyup", (e) => {
+  if (e.target.value.length === 11) {
+    submitNext.disabled = false;
+  } else {
+    submitNext.disabled = true;
+  }
+});
+
+submitNext.addEventListener("click", (e) => {
+  e.preventDefault();
+});
+
+const modalBtn = getInputById("modalBtn");
+modalBtn.addEventListener("click", () => {
+  location.reload();
+});
