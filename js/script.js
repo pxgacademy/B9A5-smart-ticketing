@@ -1,3 +1,11 @@
+// mobile navbar
+
+const navIcon = getInputById("nav-icon");
+navIcon.addEventListener("click", () => {
+  const mobileNav = getInputById("mobile-nav");
+  mobileNav.classList.toggle('hidden')
+});
+
 const totalBusSeat = 40;
 const ticketPrice = 550;
 let tPrice = 0;
@@ -37,8 +45,9 @@ const memoItem = (v) => {
   // add seat total number
   const seatCount = getInputById("seatCount");
   seatCount.innerText = turn;
-  if(turn === 1){
-    seatCount.classList = 'bg-primaryColor px-1 text-white rounded-full text-[14px] font-normal'
+  if (turn === 1) {
+    seatCount.classList =
+      "bg-primaryColor px-1 text-white rounded-full text-[14px] font-normal";
   }
 
   // seat left count
